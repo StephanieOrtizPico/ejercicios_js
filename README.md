@@ -92,6 +92,34 @@ if (esNumero(numero1) && esNumero(numero2))
 6. Pedir dos números por pantalla y una operación (+, -, *, /) y mostrar en un alert el resultado de la operación.  Si la operación no es ninguna de las anteriores, se debe mostrar el mensaje "Operación incorrecta".  Se debe validar que los valores introducidos sean números.
 
 ```Javascript
+    // Validar si un valor es un número
+    function esNumero(valor) {
+      return !isNaN(valor);
+    }
+
+    // Solicitar al usuario dos números y una operación
+    let numero1 = prompt("Por favor, introduce el primer número:");
+    let numero2 = prompt("Por favor, introduce el segundo número:");
+    let operacion = prompt("Por favor, introduce la operación (+, -, *, /):");
+
+    // Convertir los valores ingresados a números
+    numero1 = parseFloat(numero1);
+    numero2 = parseFloat(numero2);
+
+    // Validar si ambos valores son números
+    if (esNumero(numero1) && esNumero(numero2)) {
+      // Realizar la operación seleccionada
+      let resultado;
+      switch (operacion) {
+        case "+":
+          resultado = numero1 + numero2;
+          break;
+        case "-":
+          resultado = numero1 - numero2;
+          break;
+        case "*":
+          resultado = numero1 * numero2;
+          break;
         case "/":
           resultado = numero1 / numero2;
           break;
@@ -174,28 +202,32 @@ if (esNumero(numero1) && esNumero(numero2))
 *****
 
 ```Javascript
-// Dibujar un cuadrado de asteriscos de tamaño especificado
-    function dibujarCuadrado(tamaño) {
-      let cuadrado = "";
-      // Dibujar la primera fila de asteriscos
-      cuadrado += "*".repeat(tamaño) + "\n";
-
-      // Dibujar las filas intermedias con asterisco en los bordes y espacios en el centro
-      for (let i = 0; i < tamaño - 2; i++) {
-        cuadrado += "*" + " ".repeat(tamaño - 2) + "*\n";
-      }
-
-      // Ultima fila de asteriscos
-      cuadrado += "*".repeat(tamaño) + "\n";
-
-      return cuadrado;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9</title>
+</head>
+<body>
+    <script>
+    var tamaño = 5;
+    for (var i = 0; i < tamaño; i++) 
+    {
+      var linea = "";
+      for (var j = 0; j < tamaño; j++){
+        if (i === 0 || i === tamaño - 1 || j === 0 || j === tamaño - 1) {
+            linea += "*";
+        } else {
+            linea += " ";
+        }
+        }
+    console.log(linea);
     }
 
-    // Elemento pre donde se mostrará el cuadrado
-    let cuadradoElement = document.getElementById("cuadrado");
-
-    // Dibujar el cuadrado de asteriscos de 5x5
-    cuadradoElement.textContent = dibujarCuadrado(5);
+    </script>
+</body>
+</html>
 ```
 
 10. Cree esta figura por pantalla con JS
