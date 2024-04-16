@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 7</title>
+</head>
+<body>
+  <script>
+    // Validar si un valor es un número
+    function esNumero(valor) {
+      return !isNaN(valor);
+    }
+
+    // Pedir una nota hasta que sea un número válido
+    function pedirNota(mensaje) {
+      let nota;
+      do {
+        nota = prompt(mensaje);
+        if (!esNumero(nota)) {
+          alert("Por favor, introduce una nota válida.");
+        }
+      } while (!esNumero(nota));
+      return parseFloat(nota);
+    }
+
+    // Pedir las tres notas a los estudiantes
+    let nota1 = pedirNota("Por favor, introduce la primera nota:");
+    let nota2 = pedirNota("Por favor, introduce la segunda nota:");
+    let nota3 = pedirNota("Por favor, introduce la tercera nota:");
+
+    // Calcular la media
+    let promedio = (nota1 + nota2 + nota3) / 3;
+
+    // Determinar si el estudiante está aprobado o reprobado
+    let estado;
+    if (promedio >= 30) {
+      estado = "Aprobado";
+    } else {
+      estado = "Reprobado";
+    }
+
+    // Mostrar el resultado en un alert
+    alert("El estudiante está " + estado + " con un promedio de: " + promedio.toFixed(2));
+  </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 9</title>
+  <style>
+    pre {
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+  <pre id="cuadrado"></pre>
+
+  <script>
+    // Dibujar un cuadrado de asteriscos de tamaño especificado
+    function dibujarCuadrado(tamaño) {
+      let cuadrado = "";
+      // Dibujar la primera fila de asteriscos
+      cuadrado += "*".repeat(tamaño) + "\n";
+
+      // Dibujar las filas intermedias con asterisco en los bordes y espacios en el centro
+      for (let i = 0; i < tamaño - 2; i++) {
+        cuadrado += "*" + " ".repeat(tamaño - 2) + "*\n";
+      }
+
+      // Ultima fila de asteriscos
+      cuadrado += "*".repeat(tamaño) + "\n";
+
+      return cuadrado;
+    }
+
+    // Elemento pre donde se mostrará el cuadrado
+    let cuadradoElement = document.getElementById("cuadrado");
+
+    // Dibujar el cuadrado de asteriscos de 5x5
+    cuadradoElement.textContent = dibujarCuadrado(5);
+  </script>
+</body>
+</html>

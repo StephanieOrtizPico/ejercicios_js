@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 10</title>
+  <style>
+    pre {
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+  <pre id="figura"></pre>
+
+  <script>
+    // Dibujar la figura con asteriscos
+    function dibujarFigura() {
+      let figura = "";
+      // Parte superior de la figura
+      for (let i = 1; i <= 5; i++) {
+        figura += " ".repeat(5 - i) + "*".repeat(2 * i - 1) + "\n";
+      }
+      // Parte inferior de la figura
+      for (let i = 4; i >= 1; i--) {
+        figura += " ".repeat(5 - i) + "*".repeat(2 * i - 1) + "\n";
+      }
+      return figura;
+    }
+
+    // Elemento pre donde se mostrará la figura
+    let figuraElement = document.getElementById("figura");
+
+    // Dibujar la figura
+    figuraElement.textContent = dibujarFigura();
+  </script>
+</body>
+</html>

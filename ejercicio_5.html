@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 5</title>
+</head>
+<body>
+  <script>
+    // Validar si un valor es un número
+    function esNumero(valor) {
+      return !isNaN(valor);
+    }
+
+    // Solicitar dos números y validarlos
+    let numero1 = prompt("Por favor, introduce el primer número:");
+    let numero2 = prompt("Por favor, introduce el segundo número:");
+
+    // Convertir los valores ingresados a números
+    numero1 = parseFloat(numero1);
+    numero2 = parseFloat(numero2);
+
+    // Verificar si ambos valores son números
+    if (esNumero(numero1) && esNumero(numero2)) {
+      // Calcular la suma de los números
+      let suma = numero1 + numero2;
+      // Mostrar la suma en un alert
+      alert("La suma de los dos números es: " + suma);
+    } else {
+      // Mostrar un mensaje de error si alguno de los valores no es un número
+      alert("Por favor, asegúrate de introducir dos números válidos.");
+    }
+  </script>
+</body>
+</html>

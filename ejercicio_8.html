@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 8</title>
+</head>
+<body>
+  <script>
+    // Solicitar al usuario dos números
+    let numero1 = prompt("Por favor, introduce el primer número:");
+    let numero2 = prompt("Por favor, introduce el segundo número:");
+
+    // Convertir los valores ingresados a números
+    numero1 = parseFloat(numero1);
+    numero2 = parseFloat(numero2);
+
+    // Comparar los números e indicar cuál es el mayor o si son iguales
+    if (numero1 > numero2) {
+      alert("El primer número (" + numero1 + ") es mayor que el segundo número (" + numero2 + ").");
+    } else if (numero2 > numero1) {
+      alert("El segundo número (" + numero2 + ") es mayor que el primer número (" + numero1 + ").");
+    } else {
+      alert("Los dos números son iguales.");
+    }
+  </script>
+</body>
+</html>
